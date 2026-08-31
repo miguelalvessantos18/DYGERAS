@@ -1,14 +1,110 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Jackson</title>
+<title>EcoLar</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>MEU NOME É MIGUEL</h1>  
-<h2>meu numero na chamada é o 33
-<p>segue a minha foto</p>
-<img src="StFelix-Michael-Jackson.webp" alt=" foto do miguel"
 
+<div class="container">
 
+<h1>EcoLar - Guia de Transicao Ecologica</h1>
+
+<p>Esse site fala sobre atitudes que a gente pode ter em casa para ajudar o meio ambiente.</p>
+
+<div class="row">
+  <div class="col">
+    <h2>Por que isso e importante</h2>
+    <p>Pequenas mudancas no dia a dia ajudam a reduzir o impacto ambiental e economizam dinheiro.</p>
+    <ul>
+      <li>Reduz a emissao de CO2</li>
+      <li>Melhora a saude da familia</li>
+      <li>Preserva os recursos naturais</li>
+      <li>Economiza agua e energia</li>
+    </ul>
+  </div>
+  <div class="col">
+    <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=600&auto=format&fit=crop" alt="natureza">
+  </div>
+</div>
+
+<h2>O que da pra fazer</h2>
+
+<div class="row">
+  <div class="col">
+    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=600&auto=format&fit=crop" alt="reciclagem">
+  </div>
+  <div class="col">
+    <p><b>Lixo e reciclagem:</b></p>
+    <ul>
+      <li>Separar o lixo reciclavel</li>
+      <li>Fazer compostagem dos restos de comida</li>
+      <li>Usar menos plastico descartavel</li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p><b>Energia:</b></p>
+    <ul>
+      <li>Trocar lampadas por LED</li>
+      <li>Desligar aparelhos da tomada quando nao usar</li>
+    </ul>
+  </div>
+  <div class="col">
+    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=600&auto=format&fit=crop" alt="energia solar">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=600&auto=format&fit=crop" alt="agua">
+  </div>
+  <div class="col">
+    <p><b>Agua:</b></p>
+    <ul>
+      <li>Consertar torneiras que pingam</li>
+      <li>Tomar banhos mais curtos</li>
+    </ul>
+  </div>
+</div>
+
+<h2>Calculadora de impacto</h2>
+<p>Marque o que voce ja faz em casa:</p>
+
+<p>
+<input type="checkbox" class="calc" data-co2="120"> Reciclagem e compostagem<br>
+<input type="checkbox" class="calc" data-co2="800"> Energia solar<br>
+<input type="checkbox" class="calc" data-co2="30"> Economizar agua<br>
+<input type="checkbox" class="calc" data-co2="90"> Lampadas LED
+</p>
+
+<p class="resultado">CO2 economizado por ano: <span id="resultado">0</span> kg</p>
+
+<h2>Conclusao</h2>
+<p>Fazendo essas pequenas mudancas, cada familia pode ajudar bastante o meio ambiente.</p>
+
+<p><a href="agrinho.html">Ver pagina do Agrinho</a></p>
+
+</div>
+
+<script>
+var checks = document.querySelectorAll('.calc');
+var resultado = document.getElementById('resultado');
+
+for (var i = 0; i < checks.length; i++) {
+  checks[i].addEventListener('change', function() {
+    var total = 0;
+    for (var j = 0; j < checks.length; j++) {
+      if (checks[j].checked) {
+        total = total + Number(checks[j].getAttribute('data-co2'));
+      }
+    }
+    resultado.textContent = total;
+  });
+}
+</script>
+
+</body>
+</html>
